@@ -5,5 +5,6 @@
 	<version>1.0</version>
 	<date>12/08/17</date>
 	<site>http://www.ecyseo.net</site>
+	<compatible>5.6</compatible>
 	<description><![CDATA[Suggestion d'articles à lire]]></description>
 </document>
