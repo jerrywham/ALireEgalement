@@ -9,7 +9,7 @@
 **/
 if(!defined("PLX_ROOT")) exit; ?>
 <?php 
-	$format = '&lt;li&gt;#art_date : &lt;a href=&#039;#art_url&#039; title=&#039;#art_title&#039;&gt;#art_title&lt;/a&gt;&lt;/li&gt;';
+	$format = '&lt;li&gt;#art_date : &lt;a href=&#034;#art_url&#034; title=&#034;#art_title&#034;&gt;#art_title&lt;/a&gt;&lt;/li&gt;';
 	if(!empty($_POST)) {
 		$plxPlugin->setParam("nb_art", plxUtils::strCheck($_POST["nb_art"]), "numeric");
 		$plxPlugin->setParam("format", plxUtils::strCheck($_POST["format"]), "string");
