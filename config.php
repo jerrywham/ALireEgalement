@@ -30,7 +30,7 @@ if(!defined("PLX_ROOT")) exit; ?>
 		</label>
 	</p>
 	<p>
-		<label><?php $plxPlugin->lang("L_FORMAT") ?> <?php $plxPlugin->lang("L_FORMAT_WARNING") ?> : </label>
+		<label><?php $plxPlugin->lang("L_FORMAT") ?> <strong><?php $plxPlugin->lang("L_FORMAT_WARNING") ?></strong> : </label>
 			<textarea name="format" cols="100" rows="10"><?php echo ($plxPlugin->getParam("format") == '' ? $format : $plxPlugin->getParam("format"));?></textarea>
 	</p>
 	<p>
