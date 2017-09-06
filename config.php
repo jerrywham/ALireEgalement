@@ -13,7 +13,7 @@ if(!defined("PLX_ROOT")) exit; ?>
 	if(!empty($_POST)) {
 		$plxPlugin->setParam("nb_art", plxUtils::strCheck($_POST["nb_art"]), "numeric");
 		$plxPlugin->setParam("format", plxUtils::strCheck($_POST["format"]), "string");
-		$plxPlugin->setParam("catActiveOuId", plxUtils::strCheck($_POST["catActiveOuId"]), "numeric");
+		$plxPlugin->setParam("catActiveOuId", plxUtils::strCheck($_POST["catActiveOuId"]), "string");
 
 		$plxPlugin->saveParams();
 		header("Location: parametres_plugin.php?p=ALireEgalement");
@@ -26,7 +26,7 @@ if(!defined("PLX_ROOT")) exit; ?>
 
 	<p>
 		<label><?php $plxPlugin->lang("L_NB_ART") ?> : 
-			<input type="text" name="nb_art" value="<?php echo ($plxPlugin->getParam("nb_art") == 0 ? 3 : $plxPlugin->getParam("nb_art"));?>" size="2"/>
+			<input type="text" name="nb_art" value="<?php echo ($plxPlugin->getParam("nb_art") == 0 ? 3 : $plxPlugin->getParam("nb_art"));?>" size="2" maxlength="2"/>
 		</label>
 	</p>
 	<p>
@@ -35,7 +35,7 @@ if(!defined("PLX_ROOT")) exit; ?>
 	</p>
 	<p>
 		<label><?php $plxPlugin->lang("L_ACTIVE_CAT_OR_ID") ?> : 
-			<input type="text" name="catActiveOuId" value="<?php echo ($plxPlugin->getParam("catActiveOuId") < 0 ? 0 : $plxPlugin->getParam("catActiveOuId"));?>" size="3"/>
+			<input type="text" name="catActiveOuId" value="<?php echo ($plxPlugin->getParam("catActiveOuId") < 0 ? 0 : $plxPlugin->getParam("catActiveOuId"));?>" size="3" maxlength="20"/>
 		</label>
 	</p>
 
