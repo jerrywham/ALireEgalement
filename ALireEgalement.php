@@ -47,11 +47,16 @@ class ALireEgalement extends plxPlugin {
 		$plxShow = plxShow::getInstance();
 		$formatThumb = '<img class="art_thumbnail" src="#img_url" alt="#img_alt" title="#img_title" />';
 		$format = html_entity_decode($this->getParam('format'));
-		if ($this->getParam('catActiveOuId') == 0) {
+		if ($this->getParam('catActiveOuId') == "0") {
 			$cat_ids = $plxShow->artActiveCatIds();
 			$cat_ids = ($cat_ids ? implode('|', $cat_ids) : '');
 		} else {
-			$cat_ids = str_pad(intval($this->getParam('catActiveOuId')),3,'0',STR_PAD_LEFT);
+			$cats = trim($this->getParam('catActiveOuId'),'|');
+			$cats = explode('|',$cats);
+			foreach ($cats as $key => $cat) {
+				$cats[] = str_pad(intval($cat),3,'0',STR_PAD_LEFT);
+			}
+			$cat_ids = implode('|',$cats);
 		}
 		# Recherche de tous les articles publiés dans la catégorie paramétrée/les catégories actives de l'article en cours de lecture
 		$plxGlob_arts = clone $plxMotor->plxGlob_arts;
